@@ -1,10 +1,71 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Actuarial Job Board</title>
+  <link rel="stylesheet" href="/style.css" />
 </head>
 <body>
-$END$
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="header-container">
+      <div class="logo">📋 Actuarial Jobs</div>
+
+    </div>
+  </header>
+
+  <div class="container">
+
+    <!-- Job Form -->
+    <form id="job-form">
+      <input type="text" id="title" placeholder="Title" required />
+      <input type="text" id="company" placeholder="Company" required />
+      <input type="text" id="location" placeholder="Location" required />
+      <select id="job_type">
+        <option value="">Select Job Type</option>
+        <option value="Remote">Remote</option>
+        <option value="Onsite">Onsite</option>
+        <option value="Hybrid">Hybrid</option>
+      </select>
+      <input type="text" id="tags" placeholder="Tags (comma separated)" />
+      <button type="submit">Add Job</button>
+    </form>
+
+    <!-- Filter Controls -->
+    <div id="filters">
+      <h3>🔍 Filter & Sort</h3>
+      <input type="text" id="filter_job_type" placeholder="Filter by Job Type" />
+      <input type="text" id="filter_location" placeholder="Filter by Location" />
+      <input type="text" id="filter_tag" placeholder="Filter by Tag" />
+      <select id="sort_select">
+        <option value="posting_date_desc">Newest First</option>
+        <option value="posting_date_asc">Oldest First</option>
+      </select>
+      <button id="apply-filters">Apply</button>
+      <button id="clear-filters">Clear</button>
+    </div>
+
+    <!-- Toggle Layout -->
+    <button id="toggle-layout">📱 Toggle Mobile View</button>
+
+    <h2 class="center-heading">Job Listings</h2>
+    <div id="jobs"></div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="footer-container">
+      <p>&copy; 2025 Actuarial Job Board. All rights reserved.</p>
+      <div class="footer-links">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms</a>
+        <a href="#">Contact</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="/script.js"></script>
 </body>
 </html>

@@ -1,9 +1,10 @@
-from flask import Flask
-app = Flask(__name__)
+from app import create_app, db
+from app.models import Job  # ✅ make sure model is loaded
 
-@app.route('/')
-def hello_world():  # put application's code here
-    return 'Hello World!'
+app = create_app()
+
+with app.app_context():
+    db.create_all()
 
 if __name__ == '__main__':
-    app.run()
+    app.run(debug=True)
